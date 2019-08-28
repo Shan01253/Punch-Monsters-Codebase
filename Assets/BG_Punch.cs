@@ -16,7 +16,7 @@ namespace YahiyaScripts
 
         private static bool QueuedTarget = false;
         private Camera cam;
-        
+
 
 
         public BG_Punch(Animator anim, Transform transform, Transform Glove, ExtendoDefense ED, Action<bool> callback)
@@ -33,19 +33,16 @@ namespace YahiyaScripts
             target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             target.z = 0;
             anim.SetTrigger("punch");
-            distance = (target - transform.position).magnitude;
+            distance = (target - transform.position - Vector3.right * 2).magnitude;
+            if (distance > ED.MaximumPunchDistance)
+                distance = ED.MaximumPunchDistance;
             cam = Camera.main;
         }
 
         public void Execute()
         {
-            Debug.Log(ED.percentToTarget);
-            if (ED.percentToTarget * distance < 2)
-                Glove.localPosition = Vector3.right * 2;
-            //else if (ED.percentToTarget * distance > ED.MaximumPunchDistance)
-            //    Glove.localPosition = Vector3.right * ED.MaximumPunchDistance;
-            else
-                Glove.localPosition = Vector3.right * ED.percentToTarget * distance;
+
+            Glove.localPosition = Vector3.right * (2 + ED.percentToTarget * distance);
 
             if (Input.GetMouseButtonDown(0))
             {

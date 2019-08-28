@@ -1295,6 +1295,7 @@ MonoBehaviour:
   scoreText: {fileID: 1165256773}
   wallHPText: {fileID: 224971435}
   waveText: {fileID: 193433914}
+  gameOverPanel: {fileID: 0}
   wallHP: {fileID: 872064049}
   wall: {fileID: 375399085}
   currentScore: 0
@@ -1557,6 +1558,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2104833971404643501, guid: 0f276a560b97f7c41b99bce07cd35be8,
+        type: 3}
+      propertyPath: MaximumPunchDistance
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f276a560b97f7c41b99bce07cd35be8, type: 3}
