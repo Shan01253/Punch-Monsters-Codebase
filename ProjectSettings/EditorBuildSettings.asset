@@ -4,8 +4,7 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/_Sha/ShaTesting.unity
-    guid: f1223eda14006d346b168bdc4301c742
+  m_Scenes: [{enabled: 1, path: Assets/_Sha/ShaTesting.unity, guid: f1223eda14006d346b168bdc4301c742},
+    {enabled: 1, path: Assets/Official Builds/Generic Main Menu.unity, guid: bc02ac8ba8e5db4459b446f86bcaf33b},
+    {enabled: 1, path: Assets/OfficialBuild_8_27_19.unity, guid: 7e67fc17bd73ccb4d87e0f8fca758c22}]
   m_configObjects: {}

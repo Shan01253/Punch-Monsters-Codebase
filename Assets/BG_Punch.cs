@@ -42,6 +42,8 @@ namespace YahiyaScripts
             Debug.Log(ED.percentToTarget);
             if (ED.percentToTarget * distance < 2)
                 Glove.localPosition = Vector3.right * 2;
+            //else if (ED.percentToTarget * distance > ED.MaximumPunchDistance)
+            //    Glove.localPosition = Vector3.right * ED.MaximumPunchDistance;
             else
                 Glove.localPosition = Vector3.right * ED.percentToTarget * distance;
 
