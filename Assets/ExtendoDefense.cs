@@ -8,6 +8,7 @@ namespace YahiyaScripts
     {
         Camera cam;
         public float percentToTarget = 0;
+        public float MaximumPunchDistance = 5;
         public Transform GloveDestination;
         Vector3 v = Vector3.zero;
         StateMachine machine = new StateMachine();
