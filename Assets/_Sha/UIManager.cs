@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 /* NOTES!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -14,6 +15,7 @@ public class UIManager : MonoBehaviour
     public Text scoreText;
     public Text wallHPText;
     public Text waveText;
+    public GameObject gameOverPanel;
 
     public Slider wallHP;
 
@@ -26,6 +28,7 @@ public class UIManager : MonoBehaviour
         UpdateScore();
         wallHPText.text = "Wall HP";
         waveText.text = "Wave: ";
+        gameOverPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -56,5 +59,15 @@ public class UIManager : MonoBehaviour
     public void CalculateWallHealth()
     {
         wallHP.value = wall.wallHealth;
+        if(wallHP.value <= 0)
+        {
+            wall.GameOver();
+            gameOverPanel.SetActive(true);
+        }
+    }
+
+    public void RestartGame(int index)
+    {
+        SceneManager.LoadScene(index);
     }
 }

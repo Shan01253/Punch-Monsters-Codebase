@@ -26,8 +26,13 @@ public class TheWall : MonoBehaviour
     {
        if(wallHealth <= 0)
        {
-           wallOBJ.SetActive(false);
-           Debug.Log("GAME OVER");
+            GameOver();
        }
+    }
+
+    public void GameOver()
+    {
+        wallOBJ.SetActive(false);
+        Debug.Log("GAME OVER");
     }
 }
