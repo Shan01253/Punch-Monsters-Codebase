@@ -52,6 +52,7 @@ namespace YahiyaScripts
 
         public void Exit()
         {
+            Glove.localPosition = Vector3.right * (2);
         }
 
         public static void ForceCallback()

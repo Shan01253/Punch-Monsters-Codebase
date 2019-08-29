@@ -12,7 +12,7 @@ public class ManageExtendSize : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         
         transform.localScale = new Vector2((Glove.localPosition.x - transform.localPosition.x) - 1, 1);
