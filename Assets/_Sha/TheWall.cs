@@ -4,22 +4,23 @@ using UnityEngine;
 
 public class TheWall : MonoBehaviour
 {
-
-    public int wallHealth;
+    public static TheWall Instance;
+    public float healthDecreasePerHit = 0.5f;
+    public float wallHealth = 100;
     public GameObject wallOBJ;
-
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         wallHealth = 100;
         wallOBJ.SetActive(true);
-        StartCoroutine(DecreaseHealth());
     }
 
-    IEnumerator DecreaseHealth()
+    public void DecreaseHealth()
     {
-        yield return new WaitForSeconds(1);
-        wallHealth -= 2;
-        StartCoroutine(DecreaseHealth());
+        wallHealth -= healthDecreasePerHit;
     }
 
     private void Update()

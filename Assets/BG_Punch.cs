@@ -36,7 +36,7 @@ namespace YahiyaScripts
             distance = (target - transform.position - Vector3.right * 2).magnitude;
             if (distance > ED.MaximumPunchDistance)
                 distance = ED.MaximumPunchDistance;
-            cam = Camera.main;
+            cam = Camera.main;  
         }
 
         public void Execute()

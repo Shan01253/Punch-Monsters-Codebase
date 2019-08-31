@@ -20,14 +20,15 @@ public class UIManager : MonoBehaviour
     public Slider wallHP;
 
     public TheWall wall;
-
+    public static UIManager Instance;
     public int currentScore;
-
+    public int wave = 1;
     private void Awake()
     {
+        Instance = this;
         UpdateScore();
         wallHPText.text = "Wall HP";
-        waveText.text = "Wave: ";
+        waveText.text = "Wave: 1";
         gameOverPanel.SetActive(false);
     }
 
@@ -38,19 +39,25 @@ public class UIManager : MonoBehaviour
         UpdateScore();
     }
 
-    //EXAMPLE TO ADD TO SCORE//
-    private void Start()
+    ////EXAMPLE TO ADD TO SCORE//
+    //private void Start()
+    //{
+    //    StartCoroutine(Score());
+    //}
+    public void IncrementScore()
     {
-        StartCoroutine(Score());
+        currentScore++;
     }
-
-    IEnumerator Score()
+    //IEnumerator Score()
+    //{
+    //    yield return new WaitForSeconds(3);
+    //    currentScore += 1;
+    //    StartCoroutine(Score());
+    //}       
+    public void IncrementWave()
     {
-        yield return new WaitForSeconds(3);
-        currentScore += 1;
-        StartCoroutine(Score());
-    }       
-
+        waveText.text = "Wave: " + ++wave;
+    }
     public void UpdateScore()
     {
         scoreText.text = "Score: " + currentScore;
